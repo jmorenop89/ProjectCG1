@@ -5,12 +5,12 @@
     -->
     <div class="logo">
         <a href="" class="simple-text">
-            TaxiMetro
+            APP
         </a>
     </div>
     <div class="logo logo-mini">
         <a href="" class="simple-text">
-            TM
+            AP
         </a>
     </div>
     <div class="sidebar-wrapper">

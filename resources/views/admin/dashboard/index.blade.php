@@ -10,15 +10,7 @@
 
 @section('content')
 
-    @include('admin.dashboard.cards')
-
-    <div class="row">
-        @include('admin.dashboard.charts')
-
-        @include('admin.dashboard.table-user')
-
-        @include('admin.dashboard.table-driver')
-    </div>
+   
 @endsection
 
 @section('script')

@@ -6,7 +6,7 @@
             <p>Dashboard</p>
         </a>
     </li>
-    <li class="{{ Request::is('admin/user') || Request::is('admin/user/*') ?'active':''}}">
+    {{-- <li class="{{ Request::is('admin/user') || Request::is('admin/user/*') ?'active':''}}">
         <a href="{{ route('user.index') }}">
             <i class="ti-user"></i>
             <p>Usuarios</p>
@@ -61,5 +61,6 @@
             </ul>
         </div>
     </li>
+    --}}
 
 </ul>

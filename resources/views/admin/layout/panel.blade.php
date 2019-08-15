@@ -25,7 +25,7 @@
                         </p>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('user.index') }}">Usuarios</a></li>
+                        <li><a href="">Usuarios</a></li>
                         <li><a href="{{ route('logout') }}">Salir</a></li>
                     </ul>
                 </li>
