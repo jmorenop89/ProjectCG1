@@ -18,7 +18,6 @@
                 Agregar
             </a>
         </div>
-        @include('flash::message')
         <div class="card">
 
             <div class="header">
@@ -42,7 +41,7 @@
                                 25 => '25',
                                 50 => '50',
                                 100 => '100'
-                            ],$pager,
+                            ],@$pager,
                             [
                                 'class'=>'form-control input-sm input-inline select-pager',
                                 'id'=>'pag'
@@ -51,7 +50,7 @@
                 </div>
                 <div class="col-lg-6 text-right" style="margin: 20px 0;">
                     <div class="form-group">
-                        <input type="text" value="{{ $search }}" class="form-control" name="search">
+                        <input type="text" value="{{ @$search }}" class="form-control" name="search">
                     </div>
                     {{-- <button class="btn btn-primary">Buscar</button> --}}
                 </div>
@@ -59,46 +58,8 @@
                 <table class="table table-striped dataTable table-model">
                     <thead>
                     <tr>
-                        @if($column == 'column-1')
-                            <th class="sorting_{{$order}}">
-                                <a href="{{ route('user.order',['column-1',$order,'pager'=>$pager,'search' => $search]) }}">
-                                    Nombres
-                                </a>
-                            </th>
-                        @else
-                            <th class="sorting">
-                                <a href="{{ route('user.order',['column-1','asc','pager'=>$pager,'search' => $search]) }}">
-                                    Nombres
-                                </a>
-                            </th>
-                        @endif
-                        @if($column == 'column-2')
-                            <th class="sorting_{{$order}}">
-                                <a href="{{ route('user.order',['column-2',$order,'pager'=>$pager,'search' => $search]) }}">
-                                    Tipo de Documento
-                                </a>
-                            </th>
-                        @else
-                            <th class="sorting">
-                                <a href="{{ route('user.order',['column-2','asc','pager'=>$pager,'search' => $search]) }}">
-                                    Tipo de Documento
-                                </a>
-                            </th>
-                        @endif
-                        @if($column == 'column-3')
-                            <th class="sorting_{{$order}}">
-                                <a href="{{ route('user.order',['column-3',$order,'pager'=>$pager,'search' => $search]) }}">
-                                    Número de Documento
-                                </a>
-                            </th>
-                        @else
-                            <th class="sorting">
-                                <a href="{{ route('user.order',['column-3','asc','pager'=>$pager,'search' => $search]) }}">
-                                    Número de Documento
-                                </a>
-                            </th>
-                        @endif
-                        <th>Estado</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
                         <th class="text-right">Acciones</th>
                     </tr>
                     </thead>
@@ -106,22 +67,9 @@
                     @if(count($models))
                         @foreach($models as $model)
                             <tr>
-                                <td>{{ $model->nombres }} {{ $model->apellidos }}</td>
-                                <td>{{ $model->tipo_documento }}</td>
-                                <td>{{ $model->numero_documento }}</td>
-                                <td>
-                                    @if($model->estado == 'activo')
-                                        <a href="{{ route('user.state',$model->id) }}"
-                                           class="btn btn-success btn-sm btn-fill">Activo</a>
-                                    @else
-                                        <a href="{{ route('user.state',$model->id) }}"
-                                           class="btn btn-danger btn-sm btn-fill">Inactivo</a>
-                                    @endif
-                                </td>
+                                <td>{{ $model->name }}</td>
+                                <td>{{ $model->email }}</td>
                                 <td class="td-actions text-right">
-                                    {{-- <a href="#" rel="tooltip" title="Ver Perfil" class="btn btn-info btn-simple btn-xs">
-                                        <i class="ti-user"></i>
-                                    </a> --}}
                                     <a href="{{ route('user.edit',$model->id) }}" rel="tooltip" title="Editar"
                                        class="btn btn-success btn-simple btn-xs">
                                         <i class="ti-pencil-alt"></i>
@@ -134,7 +82,7 @@
                         @endforeach
                     @else
                         <tr class="text-center">
-                            <td colspan="6">No hay Registros</td>
+                            <td colspan="3">No hay Registros</td>
                         </tr>
                     @endif
                     </tbody>
@@ -151,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="col-md-7 col-sm-7 text-right">
-                                {!! $models->appends($request)->render() !!}
+                                {!! $models->appends(@$request)->render() !!}
                             </div>
                         </div>
                     </div>

@@ -1,10 +1,12 @@
 var app = function () {
     return {
         init: function () {
-            var $form = $('#frmSearch');
-            var $select = $('.select-pager', $form);
-            $select.change(function () {
-                $form.submit();
+            var form = $('#frmSearch');
+            console.log(form);
+            var select = $('.select-pager', form);
+            select.change(function () {
+                console.log('enviar');
+                //$form.submit();
             });
             var $delete = $('.btn-delete');
             var $table = $('.table-model');
