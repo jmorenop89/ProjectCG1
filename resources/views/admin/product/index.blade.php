@@ -1,11 +1,11 @@
 @extends('admin.layout.index')
 
 @section('title')
-    Gestión de Usuarios
+    Gestión de Productos
 @endsection
 
 @section('title.section')
-    Gestión de Usuarios
+    Gestión de Productos
 @endsection
 
 @section('content')
@@ -61,7 +61,7 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Email</th>
+                        <th>Precio</th>
                         <th class="text-right">Acciones</th>
                     </tr>
                     </thead>
@@ -70,7 +70,7 @@
                         @foreach($models as $model)
                             <tr>
                                 <td>{{ $model->name }}</td>
-                                <td>{{ $model->email }}</td>
+                                <td>{{ $model->price }}</td>
                                 <td class="td-actions text-right">
                                     <a href="{{ route('user.edit',$model->id) }}" rel="tooltip" title="Editar"
                                        class="btn btn-success btn-simple btn-xs">

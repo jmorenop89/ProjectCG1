@@ -46,7 +46,7 @@
 {!! Html::script('assets/js/jquery-jvectormap.js') !!}
 
 {{--  Google Maps Plugin    --}}
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6VAHhpu0_n8Modu0NazY74a_oRYtw7Q&libraries=drawing,places"></script>
+<!-- script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx6VAHhpu0_n8Modu0NazY74a_oRYtw7Q&libraries=drawing,places"></script -->
 
 {{-- Wizard Plugin    --}}
 {!! Html::script('assets/js/jquery.bootstrap.wizard.min.js') !!}
@@ -70,5 +70,7 @@
 {!! Html::script('assets/js/demo.js') !!}
 
 {{-- Script app --}}
-{!! Html::script('assets/script/app.js') !!}
+{{-- Html::script('assets/script/app.js') --}}
+
+{!! Html::script('assets/script/script.js') !!}
 

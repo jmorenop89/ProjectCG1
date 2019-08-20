@@ -31,5 +31,9 @@ Route::group(['prefix' => 'admin'],function(){
         //Route::get('/state/{id}',['as' => 'user.state', 'uses' => 'Admin\UserController@state']);
         Route::post('/delete',['as' => 'user.delete', 'uses' => 'Admin\UserController@destroy']);
     });
+
+    Route::group(['prefix'=>'product'],function(){
+        Route::get('/',['as' => 'product.index', 'uses' => 'Admin\ProductController@index']);
+    });
   
 });

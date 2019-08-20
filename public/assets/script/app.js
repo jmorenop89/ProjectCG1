@@ -2,10 +2,10 @@ var app = function () {
     return {
         init: function () {
             var form = $('#frmSearch');
-            console.log(form);
+            //console.log(form);
             var select = $('.select-pager', form);
             select.change(function () {
-                console.log('enviar');
+                //console.log('enviar');
                 //$form.submit();
             });
             var $delete = $('.btn-delete');
